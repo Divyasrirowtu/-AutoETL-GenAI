@@ -1,37 +1,23 @@
-from pathlib import Path
-
-import yaml
-from dotenv import load_dotenv
-
-
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-CONFIG_PATH = PROJECT_ROOT / "config" / "settings.yaml"
-
-
-def load_settings() -> dict:
-    """Load settings from the YAML configuration."""
-    load_dotenv(PROJECT_ROOT / ".env")
-
-    with CONFIG_PATH.open("r", encoding="utf-8-sig") as config_file:
-        settings = yaml.safe_load(config_file)
-
-    if not isinstance(settings, dict):
-        raise ValueError("Application configuration must be a YAML mapping.")
-
-    return settings
+from app.configuration import load_settings
 
 
 def main() -> None:
     """Start the AutoETL GenAI application."""
     settings = load_settings()
-    application = settings.get("application", {})
+    application = settings["application"]
+    data = settings["data"]
+    pipeline = settings["pipeline"]
 
     print("=" * 48)
-    print(application.get("name", "AutoETL GenAI"))
-    print(f"Version: {application.get('version', 'unknown')}")
-    print(f"Environment: {application.get('environment', 'unknown')}")
-    print("Application setup completed successfully.")
-    print("ETL and GenAI features will be added in later steps.")
+    print(application["name"])
+    print(f"Version: {application['version']}")
+    print(f"Environment: {application['environment']}")
+    print(f"Input directory: {data['input_dir']}")
+    print(f"Output directory: {data['output_dir']}")
+    print(f"Supported formats: {', '.join(data['supported_formats'])}")
+    print(f"Maximum retries: {pipeline['max_retries']}")
+    print(f"Dry run: {pipeline['dry_run']}")
+    print("Configuration loaded and validated successfully.")
     print("=" * 48)
 
 
