@@ -1,0 +1,24 @@
+```yaml
+application:
+  name: AutoETL GenAI
+  version: 1.0.0
+  environment: development
+
+data:
+  input_dir: data/input
+  output_dir: data/output
+  supported_formats:
+    - csv
+    - json
+
+validation:
+  fail_on_missing_required_columns: true
+  allow_duplicate_rows: false
+
+logging:
+  level: INFO
+  file: logs/autoetl.log
+
+pipeline:
+  max_retries: 3
+  dry_run: true
