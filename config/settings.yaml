@@ -1,4 +1,3 @@
-```yaml
 application:
   name: AutoETL GenAI
   version: 1.0.0
@@ -14,6 +13,35 @@ data:
 validation:
   fail_on_missing_required_columns: true
   allow_duplicate_rows: false
+  required_columns:
+    customers.csv:
+      - customer_id
+      - name
+      - city
+      - age
+      - purchase_amount
+    products.json:
+      - product_id
+      - product_name
+      - category
+      - price
+  required_non_null_columns:
+    customers.csv:
+      - customer_id
+      - name
+    products.json:
+      - product_id
+      - product_name
+  numeric_rules:
+    customers.csv:
+      age:
+        min: 0
+        max: 120
+      purchase_amount:
+        min: 0
+    products.json:
+      price:
+        min: 0
 
 logging:
   level: INFO
