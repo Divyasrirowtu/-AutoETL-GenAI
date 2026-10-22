@@ -1,24 +1,45 @@
+from pathlib import Path
+
+import pandas as pd
+
 from app.configuration import load_settings
+from app.ingestion.file_loader import load_file
 
 
 def main() -> None:
-    """Start the AutoETL GenAI application."""
+    """Start AutoETL GenAI and demonstrate file ingestion."""
     settings = load_settings()
-    application = settings["application"]
-    data = settings["data"]
-    pipeline = settings["pipeline"]
+
+    app = settings["application"]
+    data_settings = settings["data"]
+
+    project_root = Path(__file__).resolve().parent.parent
+    input_dir = project_root / data_settings["input_dir"]
 
     print("=" * 48)
-    print(application["name"])
-    print(f"Version: {application['version']}")
-    print(f"Environment: {application['environment']}")
-    print(f"Input directory: {data['input_dir']}")
-    print(f"Output directory: {data['output_dir']}")
-    print(f"Supported formats: {', '.join(data['supported_formats'])}")
-    print(f"Maximum retries: {pipeline['max_retries']}")
-    print(f"Dry run: {pipeline['dry_run']}")
-    print("Configuration loaded and validated successfully.")
+    print(app["name"])
+    print(f"Version: {app['version']}")
+    print(f"Environment: {app['environment']}")
     print("=" * 48)
+
+    for file_path in sorted(input_dir.iterdir()):
+        if file_path.is_file() and file_path.suffix.lower() in {
+            ".csv",
+            ".json",
+        }:
+            try:
+                dataframe = load_file(file_path)
+
+                print(f"\nFile: {file_path.name}")
+                print(f"Rows: {len(dataframe)}")
+                print(f"Columns: {list(dataframe.columns)}")
+                print("Preview:")
+                print(dataframe.head(3).to_string(index=False))
+
+            except (ValueError, OSError, pd.errors.ParserError) as error:
+                print(f"Could not load {file_path.name}: {error}")
+
+    print("\nStep 3: Data ingestion completed.")
 
 
 if __name__ == "__main__":

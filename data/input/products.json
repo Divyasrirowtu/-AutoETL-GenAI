@@ -1,0 +1,20 @@
+[
+  {
+    "product_id": 101,
+    "product_name": "Laptop",
+    "category": "Electronics",
+    "price": 55000
+  },
+  {
+    "product_id": 102,
+    "product_name": "Keyboard",
+    "category": "Accessories",
+    "price": 1500
+  },
+  {
+    "product_id": 103,
+    "product_name": "Mouse",
+    "category": "Accessories",
+    "price": 750
+  }
+]
