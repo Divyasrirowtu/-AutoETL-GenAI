@@ -1,0 +1,38 @@
+2026-10-23 21:29:33,680 | INFO | autoetl.pipeline | Starting pipeline for customers.csv
+2026-10-23 21:29:33,701 | INFO | autoetl.pipeline | Loaded customers.csv: 5 rows and 5 columns
+2026-10-23 21:29:33,781 | INFO | autoetl.pipeline | Profiling complete: 0 duplicate rows
+2026-10-23 21:29:33,810 | INFO | autoetl.pipeline | Transformations completed: 5 rows remain
+2026-10-23 21:29:33,876 | INFO | autoetl.pipeline | Pipeline succeeded for customers.csv; output=data\output\customers_transformed.csv; attempts=1
+2026-10-23 21:29:46,314 | INFO | autoetl.pipeline | Starting pipeline for products.json
+2026-10-23 21:29:46,318 | INFO | autoetl.pipeline | Loaded products.json: 3 rows and 4 columns
+2026-10-23 21:29:46,340 | INFO | autoetl.pipeline | Profiling complete: 0 duplicate rows
+2026-10-23 21:29:46,347 | INFO | autoetl.pipeline | Transformations completed: 3 rows remain
+2026-10-23 21:29:46,420 | INFO | autoetl.pipeline | Pipeline succeeded for products.json; output=data\output\products_transformed.json; attempts=1
+2026-10-23 21:34:40,616 | INFO | autoetl.pipeline | Starting pipeline for customers.csv
+2026-10-23 21:34:40,622 | INFO | autoetl.pipeline | Loaded customers.csv: 5 rows and 5 columns
+2026-10-23 21:34:40,651 | INFO | autoetl.pipeline | Profiling complete: 0 duplicate rows
+2026-10-23 21:34:40,658 | INFO | autoetl.pipeline | Transformations completed: 5 rows remain
+2026-10-23 21:34:40,684 | INFO | autoetl.pipeline | Pipeline succeeded for customers.csv; output=data\output\customers_transformed.csv; attempts=1
+2026-10-23 21:34:48,301 | INFO | autoetl.pipeline | Starting pipeline for products.json
+2026-10-23 21:34:48,303 | INFO | autoetl.pipeline | Loaded products.json: 3 rows and 4 columns
+2026-10-23 21:34:48,320 | INFO | autoetl.pipeline | Profiling complete: 0 duplicate rows
+2026-10-23 21:34:48,329 | INFO | autoetl.pipeline | Transformations completed: 3 rows remain
+2026-10-23 21:34:48,369 | INFO | autoetl.pipeline | Pipeline succeeded for products.json; output=data\output\products_transformed.json; attempts=1
+2026-10-23 21:44:58,407 | INFO | autoetl.pipeline | Starting pipeline for customers.csv
+2026-10-23 21:44:58,437 | INFO | autoetl.pipeline | Loaded customers.csv: 2 rows and 2 columns
+2026-10-23 21:44:58,474 | INFO | autoetl.pipeline | Profiling complete: 0 duplicate rows
+2026-10-23 21:44:58,482 | INFO | autoetl.pipeline | Transformations completed: 2 rows remain
+2026-10-23 21:44:58,497 | INFO | autoetl.pipeline | Pipeline succeeded for customers.csv; output=data\output\customers_transformed.csv; attempts=1
+2026-10-23 21:44:58,571 | INFO | autoetl.pipeline | Starting pipeline for customers.csv
+2026-10-23 21:44:58,598 | INFO | autoetl.pipeline | Loaded customers.csv: 1 rows and 2 columns
+2026-10-23 21:44:58,605 | ERROR | autoetl.pipeline | Initial validation failed for customers.csv: ["Missing required columns: ['name']"]
+2026-10-23 21:45:16,142 | INFO | autoetl.pipeline | Starting pipeline for customers.csv
+2026-10-23 21:45:16,154 | INFO | autoetl.pipeline | Loaded customers.csv: 5 rows and 5 columns
+2026-10-23 21:45:16,187 | INFO | autoetl.pipeline | Profiling complete: 0 duplicate rows
+2026-10-23 21:45:16,193 | INFO | autoetl.pipeline | Transformations completed: 5 rows remain
+2026-10-23 21:45:16,316 | INFO | autoetl.pipeline | Pipeline succeeded for customers.csv; output=data\output\customers_transformed.csv; attempts=1
+2026-10-23 21:45:23,728 | INFO | autoetl.pipeline | Starting pipeline for products.json
+2026-10-23 21:45:23,732 | INFO | autoetl.pipeline | Loaded products.json: 3 rows and 4 columns
+2026-10-23 21:45:23,747 | INFO | autoetl.pipeline | Profiling complete: 0 duplicate rows
+2026-10-23 21:45:23,753 | INFO | autoetl.pipeline | Transformations completed: 3 rows remain
+2026-10-23 21:45:24,023 | INFO | autoetl.pipeline | Pipeline succeeded for products.json; output=data\output\products_transformed.json; attempts=1
