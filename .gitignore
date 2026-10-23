@@ -13,8 +13,6 @@ Thumbs.db
 
 logs/*
 !logs/.gitkeep
-!logs/autoetl.log
-!logs/execution_history.json
 
 data/output/*
 !data/output/.gitkeep
